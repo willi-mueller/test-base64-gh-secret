@@ -28,3 +28,13 @@ jobs:
         run: |
           echo "${{ secrets.LENGTH_3 }}" | tail -c 2
           echo "${{ secrets.LENGTH_3 }}" | base64 -d
+
+      - name: "length 2421"
+        run: |
+          echo "${{ secrets.LENGTH_2421 }}" | tail -c 2
+          echo "${{ secrets.LENGTH_2421 }}" | base64 -d | tail -c 2
+
+      - name: 'Authenticate with GCP'
+        uses: 'google-github-actions/auth@v2'
+        with:
+          credentials_json: ${{ secrets.LENGTH_2421 }} | base64 -d
