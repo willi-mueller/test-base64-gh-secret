@@ -17,14 +17,14 @@ jobs:
       - name: "length 1"
         run: |
           echo "${{ secrets.LENGTH_1 }}" | tail -c 2
-          echo $( "${{ secrets.LENGTH_1 }}" | base64 -d )
+          echo "${{ secrets.LENGTH_1 }}" | base64 -d
 
       - name: "length 2"
         run: |
           echo "${{ secrets.LENGTH_2 }}" | tail -c 2
-          echo $( "${{ secrets.LENGTH_2 }}" | base64 -d )
+          echo "${{ secrets.LENGTH_2 }}" | base64 -d
 
       - name: "length 3"
         run: |
           echo "${{ secrets.LENGTH_3 }}" | tail -c 2
-          echo $( "${{ secrets.LENGTH_3 }}" | base64 -d )
+          echo "${{ secrets.LENGTH_3 }}" | base64 -d
